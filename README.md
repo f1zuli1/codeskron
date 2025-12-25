@@ -47,6 +47,7 @@ Döngü her çalıştığında (Fiyat * Miktar) işlemi yapılır ve genel topla
 ---
 
 ## 📂 Dosya Yapısı
+```text
 codeskron/
 ├── templates/
 │   ├── index.html       # Ana sayfa
@@ -63,8 +64,7 @@ codeskron/
 │       └── urun6.jpeg
 ├── main.py              # Python çalıştırma dosyası
 └── README.md            # Proje dokümantasyonu
-
----
+```
 
 ## 💡 Geliştirme Fikirleri (To-Do)
 Proje açık kaynaklıdır ve geliştirmeye açıktır. İşte ekleyebileceğiniz bazı özellikler:
