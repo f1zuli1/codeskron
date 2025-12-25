@@ -1,70 +1,117 @@
-Anladım, istediğin düzenlemeleri yaparak, kaynak dosyadaki bilgilere sadık kalarak ve yalnızca sistem gereği olan atıf formatını kullanarak profesyonel bir README.md hazırladım.
+codeskron – Alışveriş Sepeti Sitesi
 
-Codeskron - Dinamik Alışveriş Sepeti Sistemi
-Bu proje, bir web arayüzü üzerinde ürünlerin dinamik olarak sepete eklenmesini, yönetilmesini ve toplam maliyetin hesaplanmasını sağlayan JavaScript tabanlı bir sistemdir.
+codeskron, JavaScript kullanılarak geliştirilmiş, yan panel (side cart) mantığıyla çalışan basit bir alışveriş sitesi arayüzüdür.
+Kullanıcılar ürünleri sepete ekleyebilir, sepeti sağdan açılan panelde görüntüleyebilir ve toplam tutarı anlık olarak görebilir.
 
-Temel Bileşenler ve Elementler
-Sistem, kullanıcı etkileşimi için aşağıdaki DOM elementlerini ve veri yapılarını kullanır:
+🛒 Site Özellikleri
 
+Ürünleri sepete ekleme
 
-toggleBtn: Yan paneli açmak için kullanılan tetikleyici düğmedir.
+Sağdan açılan yan sepet paneli
 
+Aynı ürünü tekrar ekleyince miktar artırma
 
-panel: Ürünlerin listelendiği ve sepet içeriğinin gösterildiği yan panel alanıdır.
+Sepetten ürün silme (X butonu)
 
+Toplam fiyatın otomatik hesaplanması
 
-closeBtn: Paneli kapatmak için kullanılan düğmedir.
+Sepet boş değilse panelin otomatik açılması
 
+🎯 Projenin Amacı
 
-cart: Sepetteki ürünlerin isimlerini, fiyatlarını ve miktarlarını saklayan merkezi JavaScript objesidir.
+Bu site, özellikle:
 
-Fonksiyonel Özellikler
-1. Panel Yönetimi
+JavaScript öğrenenler
 
-Açma: toggleBtn tıklandığında panele "show" sınıfı eklenir ve panel görünür hale gelir; bu sırada açma düğmesi gizlenir.
+DOM manipülasyonu pratiği yapmak isteyenler
 
+Basit bir alışveriş sepeti mantığını anlamak isteyenler
 
-Kapatma: closeBtn tıklandığında panelden "show" sınıfı kaldırılır ve açma düğmesi tekrar görünür hale gelir.
+için hazırlanmıştır.
 
-
-Otomatik Gösterim: Bir ürün sepete eklendiğinde, panel o an kapalıysa otomatik olarak açılır.
-
-2. Sepet Güncelleme Mantığı (updatePanel)
-Sepet içeriği her değişimde şu adımlarla yenilenir:
-
-
-Temizleme: Paneldeki eski ürün listesi, verilerin üst üste binmemesi için her güncelleme öncesi temizlenir.
+⚙️ Çalışma Mantığı
+Sepet Verisi
+let cart = {};
 
 
-Dinamik Listeleme: cart objesindeki her ürün için Flexbox düzeninde yeni bir div oluşturulur.
+Ürün adı key
+
+Fiyat ve miktar value olarak tutulur
+
+Sepeti Açma ve Kapatma
+
+Sepet Aç butonuna basınca panel görünür
+
+X butonuna basınca panel kapanır
+
+Panel açıldığında açma butonu gizlenir
+
+Ürün Ekleme
+
+“Add to Cart” butonuna basıldığında:
+
+Ürün sepete eklenir
+
+Ürün zaten varsa miktarı artırılır
+
+Sepet paneli otomatik açılır
+
+Ürün Silme
+
+Her ürünün yanında bir X butonu vardır
+
+X’e basılınca ürün sepetten silinir
+
+Sepet anında güncellenir
+
+Toplam Fiyat
+
+Her ürünün fiyatı miktarıyla çarpılır
+
+Toplam tutar sepetin en altında gösterilir
+
+🧩 Kullanılan Teknolojiler
+
+HTML – Sayfa yapısı
+
+CSS – Tasarım ve yan panel animasyonu
+
+JavaScript (Vanilla JS) – Sepet mantığı ve etkileşimler
+
+codeskron/
+├── templates/
+│   ├── index.html
+│   ├── shop.html
+│   └── hediye.html
+│
+├── static/
+│   ├── background3.jpg
+│   └── urunphoto/
+│       ├── urun1.jpg
+│       ├── urun2.jpg
+│       ├── urun3.jpg
+│       ├── urun4.jpeg
+│       ├── urun5.jpeg
+│       └── urun6.jpeg
+│
+|── main.py
+└── README.md
 
 
+💡 Geliştirme Fikirleri
 
-Miktar Gösterimi: Eğer bir üründen birden fazla varsa, ürün adının yanında miktarı (örneğin: x2) otomatik olarak belirtilir.
+Ürün miktarını artırma/azaltma butonları
 
+Sepeti localStorage ile kaydetme
 
+Mobil uyumlu tasarım
 
-Ürün Silme: Her ürünün yanında bulunan "X" butonu aracılığıyla ilgili ürün sepetten tamamen kaldırılabilir.
+Ödeme simülasyonu
 
+📄 Lisans
 
+Bu proje eğitim ve kişisel kullanım amaçlıdır.
+İsteyenler için MIT License eklenebilir.
 
-3. Otomatik Hesaplamalar
-
-Toplam Tutar: Sistem, sepetteki her ürünün birim fiyatı ile miktarını çarparak toplam sepet tutarını hesaplar.
-
-
-
-Anlık Güncelleme: Hesaplanan tutar, panelin alt kısmında oluşturulan totalDiv alanında anlık olarak güncellenerek kullanıcıya gösterilir.
-
-
-4. Ürün Ekleme Süreci
-"Add to cart" butonuna basıldığında sistem şu işlemleri gerçekleştirir:
-
-İlgili ürün kartından ürünün ismini ve fiyat bilgisini ayıklar.
-
-Ürün sepette zaten mevcutsa miktarını bir artırır; mevcut değilse yeni bir kayıt olarak ekler.
-
-
-Sepet verisi güncellendikten sonra paneli otomatik olarak yeniler.
-
-Bu proje, Vanilla JavaScript kullanarak efektif bir DOM manipülasyonu ve nesne tabanlı veri yönetimi örneği sunmaktadır.
+👨‍💻 Geliştirici: f1zuli1
+⭐ Projeyi beğendiysen yıldız vermeyi unutma!
