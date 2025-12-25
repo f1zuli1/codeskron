@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana sayfa</title>
+</head>
+<body>
+    <style>
+
+.background-image {
+    background-image: url('static/background3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+a {
+    flex: 1;
+    background-color: forestgreen;
+    color: white;
+    border: 1px solid;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease-out;
+}
+
+a:hover,
+a:focus {
+    background-color: rgb(255, 0, 0);
+    color: #333333;
+}
+
+
+.cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    top: 25px;
+    left: 950px;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: whitesmoke;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hover-underline-animation1 {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    top: 0.5px;
+    right: 280px;
+    font-size: 20px;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation1 {
+  position: relative;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation1:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: whitesmoke;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation1:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.marry {
+  font-family: 'Allura', cursive;
+  font-size: 80px;
+  color: whitesmoke;
+  font-weight: normal;
+  font-size: 100px;
+  position: absolute;
+  top:200px;
+  left: 800px;
+}
+
+.cristmas {
+    font-family: 'Playfair Display', 'Cinzel', 'Serif', serif;
+    font-size: 120px;
+    color: whitesmoke;
+    font-weight: 700;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 250px;
+    left: 650px;
+}
+
+.newyear {
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: 24px;
+    color: whitesmoke;
+    font-weight: normal;
+    letter-spacing: 3px;
+    font-size: 30px;
+    position: absolute;
+    top: 470px;
+    left: 800px;
+}
+
+.gift {
+  position: relative;
+  z-index: 1;
+  height: 1px;
+  width: 1px;
+  top: 800px;
+  left: 1700px;
+  background-color: red;
+}
+    </style>
+    <nav>
+      <button class="cta" onclick="window.location.href='/shop'">
+          <span class="hover-underline-animation"> Shop now </span>
+      </button>
+
+      <button class="cta" onclick="window.location.href='/'">
+          <span class="hover-underline-animation1"> Home </span>
+      </button>
+    </nav>
+
+    <div class="background-image"></div>
+
+    <button class="gift" onclick="window.location.href='/hediye'"></button>
+
+</body>
+</html>
